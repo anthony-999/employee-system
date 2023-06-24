@@ -136,33 +136,35 @@
                                 <img src="upload/<?php echo $results['PAG_IBIG']; ?>" alt="Pag-IBIG"><br>
 
                                 <button onclick="toggleDetailsContainer('<?php echo $results['id']; ?>')">Close</button>
-                            </div> 
-                            
-                            </td>
-                            
-                        
-                            </tr>
+                            </div>                            
+                            </td>                         
+                          </tr>
                         <?php } ?>
-                    </table>
-                            
+                    </table>                           
                 </div>
-        
-        
         </div>
         
         <style>
-                    #action button{
-    background-color: black;;
-    border: none;
-    color: white;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+        #action button{
+        background-color: black;;
+        border: none;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+        .details-container img{
+           
+            width: 80px;
+        }
+        .details-container img:hover{
+           
+            scale: 10;
+       }
         .search button{
         background-color: black;;
         border: none;
@@ -171,57 +173,43 @@
         border-radius: 5px;
         text-transform: uppercase;
         }
+      
+        .details-container {
+            margin-top: 80px;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 600px;
+            padding: 20px;
+            background-color: gray;
+            border-radius: 25px;
+            z-index: 999;
+            color: white;
+        }
 
-        .details-container img{
-           
-           width: 80px;
-       }
-       .details-container img:hover{
-          
-           scale: 10;
-      }
-               .search button{
-       background-color: black;;
-       border: none;
-       color: white;
-       padding: 4px;
-       border-radius: 5px;
-       text-transform: uppercase;
-       }
-     
-       .details-container {
-           display: none;
-           position: fixed;
-           top: 50%;
-           left: 50%;
-           transform: translate(-50%, -50%);
-           width: 900px;
-           height: 600px;
-           padding: 20px;
-           background-color: gray;
-           border-radius: 25px;
-           z-index: 999;
-           color: white;
-       }
+        .details-container p {
+            margin-bottom: 10px;
+        }
 
-       .details-container p {
-           margin-bottom: 10px;
-       }
+        .details-container button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .details-container img {
+        max-width: 25%;
+        margin-bottom: 10px;
+        }
+    </style>
 
-       .details-container button {
-           background-color: black;
-           color: white;
-           border: none;
-           padding: 10px;
-           cursor: pointer;
-           border-radius: 5px;
-           font-size: 16px;
-       }
-       .details-container img {
-       max-width: 25%;
-       margin-bottom: 10px;
-       }
-        </style>
+
 
         <script>
             // JavaScript code to detect changes in the search input field
@@ -240,6 +228,7 @@
             var detailsContainer = document.getElementById('details-' + id);
             detailsContainer.style.display = (detailsContainer.style.display === 'none') ? 'block' : 'none';
         }
+
         AOS.init();
         </script>
     </body>
